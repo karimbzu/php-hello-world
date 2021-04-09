@@ -24,13 +24,14 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+  
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'php-hello-world'
+    rootFolderOrFile: '$(agent.builddirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '/s:OutputPath="$(Build.ArtifactStagingDirectory)\$(Build.BuildId).zip"'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
