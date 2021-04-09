@@ -27,7 +27,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(agent.builddirectory)\$(Build.BuildId)'
+    rootFolderOrFile: 'php-hello-world'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
